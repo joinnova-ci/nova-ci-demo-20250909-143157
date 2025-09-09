@@ -24,11 +24,13 @@ def power(a, b):
 
 def modulo(a, b):
     """Get remainder of a divided by b."""
+    if b == 0:
+        raise ValueError("Modulo by zero")
     return a % b
 
 def absolute(a):
     """Get absolute value of a number."""
-    return abs(a)
+    return a if a >= 0 else -a
 
 def square_root(a):
     """Get square root of a positive number."""
@@ -43,7 +45,7 @@ def factorial(n):
     if n == 0:
         return 1
     result = 1
-    for i in range(1, n + 1):
+    for i in range(2, n + 1):
         result *= i
     return result
 
